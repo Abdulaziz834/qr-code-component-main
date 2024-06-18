@@ -6,7 +6,7 @@
     --clr-gray-blue-150: hsl(220, 15%, 55%);
     --clr-gray-blue-850: hsl(218, 44%, 22%);
 
-    
+
     --clr-bg-body: var(--clr-gray-100);
     --clr-primary: var(--clr-blue-500);
     --clr-text-primary: var(--clr-gray-blue-850);
@@ -32,6 +32,7 @@ body {
     gap: 1rem;
     width: min-content;
     margin-block: 1.5rem;
+    box-shadow: 0 8px 20px rgb(0 0 0 / .1);
 }
 
 .qr-code {
@@ -55,13 +56,14 @@ body {
 
 span.link-tooltip {
     position: absolute;
-    background-color: var(--clr-bg-tooltip);
-    color: var(--clr-text-tooltip);
-    padding: 8px 12px;
-    font-size: 0.875rem;
-    border-radius: 8px;
-    inset: calc(100% + 8px) auto auto 50%;
+    inset: calc(100% + 0.57em) auto auto 50%;
     translate: -50% 0;
+    font-size: 0.875rem;
+    width: max-content;
+    padding: 0.57em 0.86em;
+    border-radius: 0.57em;
+    color: var(--clr-text-tooltip);
+    background-color: var(--clr-bg-tooltip);
     opacity: 0;
     transition: opacity 250ms ease-in-out;
 
@@ -70,7 +72,7 @@ span.link-tooltip {
 span.link-tooltip::before {
     position: absolute;
     content: "";
-    width: 12px;
+    width: 0.86em;
     aspect-ratio: 1;
     background-color: var(--clr-bg-tooltip);
     inset: 0 auto auto 50%;

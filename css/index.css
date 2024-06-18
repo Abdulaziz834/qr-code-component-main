@@ -32,7 +32,7 @@ body {
     gap: 1rem;
     width: min-content;
     margin-block: 1.5rem;
-    box-shadow: 0 8px 20px rgb(0 0 0 / .1);
+    box-shadow: 0 10px 25px rgb(0 0 0 / .075);
 }
 
 .qr-code {
@@ -40,8 +40,15 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.qr-code:hover > span.link-tooltip {
+.qr-code:hover>span.link-tooltip,
+.qr-link:focus-visible + span.link-tooltip {
     opacity: 1;
+    transition-delay: 300ms;
+}
+
+
+.qr-link {
+    user-select: none;
 }
 
 .qr-link:focus-visible {
@@ -65,8 +72,7 @@ span.link-tooltip {
     color: var(--clr-text-tooltip);
     background-color: var(--clr-bg-tooltip);
     opacity: 0;
-    transition: opacity 250ms ease-in-out;
-
+    transition: opacity 250ms ease-in-out 50ms;
 }
 
 span.link-tooltip::before {
